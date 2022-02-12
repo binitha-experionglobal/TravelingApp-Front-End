@@ -1,0 +1,45 @@
+<section class="vh-100" style="background-color: #90b8b4;">
+  <div clas="form-control">
+      <!--search functionality -->
+      <input class="form-control" type="text" style="background-color: #dfe6e5;" placeholder="search text here" [(ngModel)]="filter">
+      <!-- {{filter}} -->
+  </div><br>
+<h4 style="text-align: center;">Display the list of travellers name, date of travel, place of departure, destination,<br>
+   Airline , time of travel , no. of tickets (passengers)and price of ticket per person
+  who depart from "Delhi" airport on 10 days from now</h4>
+<hr>
+<table class="table table-success mt-5">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Traveler Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Date</th>
+      <th scope="col">Departure</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Depart Time</th>
+      <th scope="col">Airline</th>
+      <th scope="col">Adult Charge</th>
+      <th scope="col">Child Charge</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr Service *ngFor="let tra of service.delhi  | filter: filter| paginate:{itemsPerPage: 5,currentPage: page}">
+      <th scope="row">{{tra.TravelerId}}</th>
+      <td>{{tra.TravelerName}}</td>
+      <td>{{tra.TravelDate| date:"dd-MMM-yyy"}}</td>
+      <td>{{tra.DepartLocation}}</td>
+      <td>{{tra.DestinLocation}}</td>
+      <td>{{tra.DepartTime}}</td>
+      <td>{{tra.AirlineName}}</td>
+      <td>{{tra.ChildCharge}}</td>
+      <td>{{tra.AdultCharge}}</td>
+
+    </tr>
+</tbody>
+
+</table>
+<div class="footer">
+  <!-- pagination -->
+  <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+</div>
+</section>

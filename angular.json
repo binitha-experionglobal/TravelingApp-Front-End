@@ -28,7 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -123,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TravelBook"
+    }
+  },
+  "defaultProject": "TravelBook",
+  "cli": {
+    "analytics": "ee3e5412-0982-4c8b-a390-daa64f8db20b"
+  }
 }
